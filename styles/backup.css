@@ -1,0 +1,372 @@
+@font-face {
+    font-family: "Cera Pro Medium";
+    src: url("../assetsera-font/TypeMates - Cera Pro Medium.otf");
+    src: url("../assetsera-font/TypeMates - Cera Pro Medium.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "Cera Pro Regular";
+    src: url("../assetsera-font/TypeMates - Cera Pro Regular.otf");
+    src: url("../assetsera-font/TypeMates - Cera Pro Regular.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "Cera Pro Regular";
+    src: url("../assetsera-font/TypeMates - Cera Pro Bold.otf");
+    src: url("../assetsera-font/TypeMates - Cera Pro Bold.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "Cera Pro Light";
+    src: url("../assetsera-font/TypeMates - Cera Pro Light.otf");
+    src: url("../assetsera-font/TypeMates - Cera Pro Light.otf") format("opentype")
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: "Cera Pro Medium";
+}
+
+.preloader-supra {
+    z-index: 805;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 1, 1, 0.38);
+}
+
+.loader-info {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    width: 72%;
+    text-align: center;
+    background: rgba(1, 1, 1, 0.48);
+    padding: 30px;
+}
+
+.progress {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 13px;
+    height: 4px;
+    overflow: hidden;
+}
+
+.loader-line {
+    position: absolute;
+    width: 100%;
+    background: white;
+    opacity: 0.85;
+    border-radius: 3px;
+    height: 100%;
+}
+
+.progress-line {
+    position: absolute;
+    width: 100%;
+    background: red;
+    opacity: 0.85;
+    border-radius: 3px;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%) scaleX(0);
+    transition: 0.4s;
+}
+
+.loader-info img {
+    height: 40px;
+}
+
+.loader-info p {
+    color: white;
+    font-size: 16px;
+}
+
+.wawe-1 {
+    z-index: 2;
+    position: absolute;
+    width: 113%;
+    bottom: -95px;
+    left: -35px;
+}
+
+.wawe-2 {
+    z-index: 1;
+    position: absolute;
+    width: 115%;
+    bottom: -65px;
+    left: -35px;
+}
+
+.preloader-footer {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    z-index: 3;
+    width: 100%;
+    left: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.preloader-footer .exex {
+    height: 25px;
+}
+
+.preloader-footer .road-track {
+    height: 30px;
+    margin-bottom: 7px;
+}
+
+.preloader-footer .eight-logo {
+    height: 61px;
+    margin-bottom: 3px;
+}
+
+.preloader-footer span {
+    position: absolute;
+    font-family: 'Cera Pro Light';
+    left: 18px;
+    top: -20px;
+}
+
+.active-screen {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 810;
+    pointer-events: none;
+}
+
+.active-screen .header {
+    position: absolute;
+    top: 0;
+    height: 92px;
+    width: 100%;
+    background: white;
+    pointer-events: auto;
+}
+
+.logo-container {
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    position: relative;
+}
+
+.logo-container img {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.visit-site {
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    position: relative;
+}
+
+.visit-btn {
+    transform: translate(-50%, -50%);
+    height: 33px;
+    background: red;
+    width: 132px;
+    text-align: center;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    border-radius: 9px;
+}
+
+.visit-btn img {
+    float: left;
+    padding-left: 13px;
+    padding-top: 10px;
+    height: 13px;
+}
+
+.visit-btn span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-size: 12px;
+    left: 50%;
+    color: white;
+    white-space: nowrap;
+    padding-left: 22px;
+}
+
+.active-footer {
+    pointer-events: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.swiper-container {
+    position: relative;
+    height: 90px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.89);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.89);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.round{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid rgba(112, 112, 112, 1);
+    display: inline-block;
+}
+
+.swiper-wrapper {
+
+}
+
+.footer-info {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+}
+
+.screenshot-section {
+    position: relative;
+    width: 100%;
+    height: 115px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.screenshot-btn {
+    height: 85px;
+    width: 85px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(#FF4A53, #FF0000);;
+    border-radius: 100%;
+}
+
+.screenshot-btn img {
+    height: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+
+#screenshot-container{
+    display: none;
+    position: relative;
+    height: 65%;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid white;
+    border-radius: 15px;
+    z-index: 600;
+}
+#screenshot-img{
+    pointer-events: all;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+}
+#screenshot-container div{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    border-radius: 4px;
+    height: 20px;
+    text-align: center;
+    background: white;
+    padding: 5px;
+}
+
+#red {
+    background: #FF0000;
+}
+
+#yellow {
+    background: yellow;
+}
+
+#blue {
+    background: blue;
+}
+
+#grey {
+    background: grey;
+}
+
+#black {
+    background: black;
+}
+
+#white {
+    background: white;
+}
+
+.round::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 72px;
+    width: 72px;
+    margin: auto;
+    border-radius: 100%;
+    border: 2px solid white;
+    z-index: 0;
+    transition: .5s;
+    opacity: 0;
+}
+
+.active::before{
+    opacity: 1;
+}
+
+.advise{
+    text-align: center;
+    padding: 4px;
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Supra AR</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--Swiper-->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css"
+          integrity="sha256-k3DWCmRTsHff0VydDvufDdhtI6v/43rHNJjnEtJiRhw=" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"
+            integrity="sha256-Z0FaLJBRVnk9E4AUxJn3pFSbnjBGzWKEvwxb46/Z9+w=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="js/aframe.js"></script>
+    <script src="js/gesture-detector.js"></script>
+    <script src="js/hold-drag.js"></script>
+    <script src="js/pinch-scale.js"></script>
+    <script src="js/photo-mode.js"></script>
+    <script src="js/two-finger-spin.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/slider.js"></script>
+    <script defer src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+
+    <script async
+            src="//apps.8thwall.com/xrweb?appKey=iIE5oljxkWPT6q05mFhtq8dhcAfijFwObWts0xW9wSCz6UgnPvt10cs2YZRKrl8iftgJMs"></script>
+</head>
+
+<body>
+<div style="" id="preloader-supra" class="preloader-supra">
+    <!--<img class="background-image" src="./assets/bg.png">-->
+    <div class="background-image-cover"></div>
+    <div class="loader-info">
+        <img src="assets/Group%207.svg">
+        <div class="progress">
+            <div class="loader-line"></div>
+            <div id="progress-line" class="progress-line"></div>
+        </div>
+        <p>Loading Augmented Reality...</p>
+    </div>
+
+    <img class="wawe-1" src="assets/wave.png">
+    <img class="wawe-2" src="assets/wave.png">
+    <div class="preloader-footer">
+        <span>Powered by</span>
+        <img class="exex" src="assets/exex.png">
+        <img class="road-track" src="assets/road-track.svg">
+        <img class="eight-logo" src="assets/8th.png">
+    </div>
+</div>
+
+<a-scene style="position: absolute"
+        xrweb
+        gesture-detector
+        xrextras-almost-there
+        xrextras-loading
+        xrextras-runtime-errors
+        photo-mode>
+
+    <a-assets>
+        <a-asset-item id="supraModel" src="./assets/supra-v2.glb"></a-asset-item>
+    </a-assets>
+
+    <a-camera
+            id="camera"
+            position="0 8 8"
+            raycaster="objects: .cantap"
+            cursor="
+fuse: false;
+rayOrigin: mouse;">
+    </a-camera>
+
+    <a-entity
+            light="type: directional;
+intensity: 0;"
+            position="1 4.3 2.5">
+    </a-entity>
+
+    <a-light type="ambient" intensity="0"></a-light>
+
+    <a-entity id="supra" gltf-model="#supraModel" class="cantap" material="color: black" hold-drag two-finger-spin
+              pinch-scale
+              scale="0.9 0.9 0.9"></a-entity>
+
+    <a-entity
+            id="ground"
+            class="cantap"
+            geometry="primitive: box"
+            material="color: #ffffff; transparent: true; opacity: 0.0"
+            scale="1000 2 1000"
+            position="0 -1 0">
+    </a-entity>
+</a-scene>
+
+<div class="active-screen">
+    <div id="instructions">
+        <div class="instructions-group">
+            <div>
+                <img src="assets/instructions/camera-instructions.svg">
+            </div>
+            Take a photo of car by pressing camera icon
+        </div>
+        <div class="instructions-group">
+            <div>
+                <img src="assets/instructions/paint.svg">
+            </div>
+            Change the color of your car with the paint icon
+        </div>
+        <div class="instructions-group">
+            <div>
+                <img src="assets/instructions/tap.svg">
+            </div>
+            Pinch & Zoom to resize the car
+        </div>
+        <div class="instructions-group">
+            <div>
+                <img src="assets/instructions/move.svg">
+            </div>
+            One finger to move the car in your space
+        </div>
+        <div class="instructions-group">
+            <div>
+                <img src="assets/instructions/speedometer.svg">
+            </div>
+            Tap this button to do a burnout
+        </div>
+        <div id="ok-btn">
+            <span>OK</span>
+        </div>
+    </div>
+    <img src="assets/white-logo-small.png" id="logoPng" style="display: none;">
+    <div id="screenshot-container">
+        <div class="advise">Touch and hold to save.</div>
+        <img id="screenshot-img" src="">
+    </div>
+    <div class="header">
+        <div class="logo-container">
+            <img src="assets/active-logo.svg">
+        </div>
+        <div class="visit-site">
+            <a href="https://www.toyota.com/upcoming-vehicles/gr-supra/">
+                <div class="visit-btn">
+                    <img src="assets/world.png">
+                    <span>Visit Supra Web</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="active-footer">
+        <div style="display: none" id="footer-info" class="footer-info">
+            Choose from the colors below
+        </div>
+        <div id="swiper-container" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div color="0xcc0300" id="red" class="round"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div color="0xe0ff00" id="yellow" class="round"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div color="0x3849ff" id="blue" class="round"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div color="0x696e6a" id="grey" class="round"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div color="0x000000" id="black" class="round"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div color="0xffffff" id="white" class="round"></div>
+                </div>
+            </div>
+        </div>
+        <div class="screenshot-section">
+            <!--<img id="burnoutBtn"  src="./assets/burnout.png">-->
+            <div id="burnoutBtn"></div>
+            <div id="shutterButton" class="screenshot-btn">
+                <!--<img src="./assets/photo-camera.svg">-->
+                <!--<img src="./assets/cameraicon-new.png">-->
+            </div>
+            <div style="display: none" id="closeButton" class="screenshot-btn">
+                <img style="height: 50px" src="assets/close.png">
+            </div>
+            <div id="paintBtn"></div>
+            <!--<img id="paintBtn" src="./assets/painticon.png">-->
+        </div>
+    </div>
+    <audio id="sound" preload="auto">
+        <source src="assets/burnout.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</div>
+
+<script src="js/carColors.js"></script>
+
+</body>
+</html>
